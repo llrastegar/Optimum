@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Utility.h"
 using namespace std;
 string eD(string toE) {
 	char key = 'K';
@@ -11,6 +12,6 @@ string eD(string toE) {
 int main() {
 	string a = "Linus";
 	string b = eD(a);
-	cout << b << endl;
-	cout << eD(b) << endl;
+	puts(b);
+	puts(eD(b));
 }
