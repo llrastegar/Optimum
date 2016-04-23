@@ -9,7 +9,7 @@ string XOReD(string toE) {
 	char key = 'K';
 	string output = toE;
 	for (unsigned int i=0; i<toE.size(); i++) {
-		output[i] = toE[i] ^ key; // is the xor operator
+		output[i] = toE[i] ^ key; // ^ is the xor operator
 	}
 	return output;
 }
