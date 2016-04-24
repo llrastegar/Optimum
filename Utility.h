@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 #ifndef UTILITY_H_INCLUDED
 #define UTILITY_H_INCLUDED
@@ -13,4 +14,15 @@ string XOReD(string toE) {
 	}
 	return output;
 }
+int rand(int n) {
+	time_t result=time(nullptr);
+	int me = int(result) % n;
+	return me;
+}
+double rand(double n) {
+	time_t result=time(nullptr);
+	double me = int(result) % n;
+	return me + (0.1 * me) + (0.01*me) * (int(time(nullptr))%n*0.01);	
+}
+
 #endif // UTILITY_H_INCLUDED
