@@ -1,21 +1,28 @@
 Construct basis for Optimum Programming Language:
     Object Orientation
+      Public, Private, Shareable
       Type inference
       Variable variable types
+      Precise or Imprecise Memory Allocation
     Functionality
       Lazy
-      Compositional Functions
-      Global and Local
+      Compositional Functions (f(g(x)))
+      Global and Local (Global can access absolutely everything given in the main program while local behaves like normal functions)
       Lambdas
       Blocs
     Self-Changing Code
-      Edit a copy of code to create genetically spliced optimum.
+      The program itself can edit a copy of code, which can edit the original and so on, to create genetically spliced optimum
     Immediate Libraries
       Web-libraries (using Haskell or Python)
-      Audio libraries (using the open-source Maximilian library which is starred)
+      Audio libraries (using the open-source Maximilian library which is a repo I have starred)
       Web-app libraries (using GO and Dart)
       High-end Graphics libraries (using Halide, which is all in C++)
     Misc
       Maps, dictionaries, monads, zips, tuple-dictionaries, infinite lists, file IO, constant copies
       Comprehensive view on IDE, vectors and vector notation, complex numbers, customized mutable objects
       Constant copy derivations, assertions, try/catch case statements.
+    Translation:
+      Be able to translate (not compile or interpret) languages from one into the other:
+            Optimum <-> Python
+            Optimum <-> C++
+            Python <-> C++
