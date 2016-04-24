@@ -13,10 +13,10 @@ Construct basis for Optimum Programming Language:
     Self-Changing Code
       Edit a copy of code to create genetically spliced optimum.
     Immediate Libraries
-      Web-libraries
-      Audio libraries
-      Web-app libraries
-      High-end Graphics libraries
+      Web-libraries (using Haskell or Python)
+      Audio libraries (using the open-source Maximilian library which is starred)
+      Web-app libraries (using GO and Dart)
+      High-end Graphics libraries (using Halide, which is all in C++)
     Misc
       Maps, dictionaries, monads, zips, tuple-dictionaries, infinite lists, file IO, constant copies
       Comprehensive view on IDE, vectors and vector notation, complex numbers, customized mutable objects
