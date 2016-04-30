@@ -13,7 +13,7 @@ if "-" in test:
 	for e in range(0, len(operators)):
 		if any(char.isdigit() for char in operators[e]) and any(char.isdigit() for char in operators[e+1]):
 			operators.insert(e+1, "+")
-print operators
+#print operators
 a = m_eval(operators[0], operators[1], operators[2])
 while counter<len(operators):
 	a = m_eval(a, operators[counter], operators[counter+1])
