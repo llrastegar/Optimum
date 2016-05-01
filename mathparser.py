@@ -6,7 +6,7 @@ def m_eval(num, op, nun):
 	elif op=="+": return int(num)+int(nun)
 	elif op=="/": return int(num)/int(nun)
 	elif op=="^": return int(num)**int(nun)
-test = "2-5*2-17^2"
+test = "2-5*2-17^2+3^2"
 operators = re.findall("\+|\*|\^|\/|-[0-9]+|[0-9]+", test)
 counter=3
 if len(operators)>1:
