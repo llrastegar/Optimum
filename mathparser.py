@@ -1,5 +1,5 @@
 import re
-test = "2-5*2-(-17^3)-3^2"
+test = "2-(5*2)-(17^3+2)-3^2+(17)^2"
 def m_eval(num, op, nun):
 	numer = int(num)
 	nuner = int(nun)
@@ -24,16 +24,20 @@ def full_eval(test):
 					operators[e+2] = "-" + operators[e+2]
 					operators.pop(e+1)
 		print operators
-		b = 0
-		if "(" in operators:
-			begin = operators.index("(")
-			end = operators.index(")")
-			stro = operators[begin+1:end]
-			p=""
-			for e in stro:
-				p+=e
-			operators = operators[0:begin] + operators[end+1:]
-			operators.insert(begin, full_eval(p))
+		#b = 0
+		while True:
+			if "(" in operators:
+				begin = operators.index("(")
+				end = operators.index(")")
+				stro = operators[begin+1:end]
+				p=""
+				for e in stro:
+					p+=e
+				operators = operators[0:begin] + operators[end+1:]
+				a = full_eval(p)
+				operators.insert(begin, a)
+			else:
+				break
 		while True:
 			if "^" in operators:
 				if int(operators[operators.index("^")+1])%2==0 and "-" in operators[operators.index("^")-1]:
@@ -51,7 +55,7 @@ def full_eval(test):
 			else:
 				break
 		print operators
-		if len(operators)>3:
+		if len(operators)>3 or len(operators)==3:
 			a = m_eval(operators[0], operators[1], operators[2])
 			while counter<len(operators):
 				a = m_eval(a, operators[counter], operators[counter+1])
@@ -60,8 +64,10 @@ def full_eval(test):
 		elif len(operators)==2 and operators[0]=="-":
 			a = -1 * int(operators[1])
 			return str(a)
+		else:
+			return operators[0]
 	else:
-		print operators[0]
+		return operators[0]
 
 
 a = full_eval(test)
