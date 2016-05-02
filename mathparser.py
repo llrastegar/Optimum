@@ -26,11 +26,14 @@ def full_eval(test):
 		print operators
 		b = 0
 		if "(" in operators:
-			print "B"
 			begin = operators.index("(")
 			end = operators.index(")")
 			stro = operators[begin+1:end]
-			operators.remove(stro)#this deosn't work, but should! LOOK UP
+			p=""
+			for e in stro:
+				p+=e
+			operators = operators[0:begin] + operators[end+1:]
+			operators.insert(begin, full_eval(p))
 		while True:
 			if "^" in operators:
 				if int(operators[operators.index("^")+1])%2==0 and "-" in operators[operators.index("^")-1]:
@@ -48,14 +51,19 @@ def full_eval(test):
 			else:
 				break
 		print operators
-		a = m_eval(operators[0], operators[1], operators[2])
-		while counter<len(operators):
-			a = m_eval(a, operators[counter], operators[counter+1])
-			counter+=2
-		return a
+		if len(operators)>3:
+			a = m_eval(operators[0], operators[1], operators[2])
+			while counter<len(operators):
+				a = m_eval(a, operators[counter], operators[counter+1])
+				counter+=2
+			return a
+		elif len(operators)==2 and operators[0]=="-":
+			a = -1 * int(operators[1])
+			return str(a)
 	else:
 		print operators[0]
 
 
 a = full_eval(test)
+print "---------------"
 print a
