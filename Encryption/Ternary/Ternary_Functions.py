@@ -27,6 +27,8 @@ def t_xor(t=[]):
 		return 2
 	elif 0 in t and 1 in t:
 		return 1
+	elif 0 in t and 1 not in t:
+		return 0
 	else:
 		return 2
 def t_not(t=2):
