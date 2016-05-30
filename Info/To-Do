@@ -23,9 +23,9 @@ Construct basis for Optimum Programming Language:
       Web-app libraries (using GO and Dart)
       High-end Graphics libraries (using Halide, which is all in C++)
     Misc
-      Maps, dictionaries, monads, zips, tuple-dictionaries, infinite lists, file IO, constant copies
+      Maps, dictionaries, monads, zip[per]s, tuple-dictionaries, infinite lists, file IO, constant copies
       Comprehensive view on IDE, vectors and vector notation, complex numbers, customized mutable objects
-      Constant copy derivations, assertions, try/catch case statements.
+      Constant copy derivations, assertions, try/catch case statements, when statements-(if else without else)
     Translation:
       Be able to translate (not compile or interpret) languages from one into the other:
             Optimum <-> Python
