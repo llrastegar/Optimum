@@ -30,8 +30,8 @@ def full_eval(test):
 				operators.insert(a, insert)
 				if "(" not in operators:
 					out = full_eval(t_s(operators))
-			else:
-				smallop = operators[a+1:b]
+			else: //this function only looks for one pair of parentheses within another
+				smallop = operators[a+1:b] //it should look for more
 				w = smallop.index("(")
 				insert = full_eval(t_s(smallop[w+1:b]))
 				operators = operators[:w+a+1] + operators[b+1:]
