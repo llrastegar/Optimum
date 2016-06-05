@@ -1,5 +1,6 @@
+
 import re
-test = "2-(5*2)+3-(17^(3+2))+(6*7)+5+7*(1*2)"
+test = "2-(5*2)+3-(17^(3+2))+(6*(7*5*(3+3)))+5+7*(1*2)"
 
 def m_eval(l, op, q):
 	n = int(l)
@@ -30,9 +31,13 @@ def full_eval(test):
 				operators.insert(a, insert)
 				if "(" not in operators:
 					out = full_eval(t_s(operators))
-			else: //this function only looks for one pair of parentheses within another
-				smallop = operators[a+1:b] //it should look for more
-				w = smallop.index("(")
+			else:# this function only looks for one pair of parentheses within another
+				smallop = operators[a+1:b] # it should look for more
+				z=0
+				for e in smallop:
+					if e=="(":
+						w = z
+					z+=1
 				insert = full_eval(t_s(smallop[w+1:b]))
 				operators = operators[:w+a+1] + operators[b+1:]
 				operators.insert(a+w+1, insert)
